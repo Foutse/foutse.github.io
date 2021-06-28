@@ -687,7 +687,7 @@ SVG Icons - svgicons.sparkk.fr
   /* height: 200px; */
   background-image: url('../images/bgi.jpg');
   /* background-image: url(http://placekitten.com/400/200); */
-  background-position: 0px 0px;
+  /* background-position: 0px 0px; */
   background-repeat: repeat-x;
   height: 100vh;
   animation: animatedBackground 10s linear infinite alternate;
