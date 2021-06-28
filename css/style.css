@@ -164,11 +164,11 @@ a:hover, a:active, a:focus {
     position: relative;
     text-align: center;
 }
-
+/*
 .main-home {
   background: url('../images/image-background.webp') no-repeat;
   height: 100vh;
-}
+} */
 
 .main-about {
   background: url('../images/about-bg.jpg') no-repeat;
@@ -672,4 +672,23 @@ SVG Icons - svgicons.sparkk.fr
 .svg-icon circle {
   stroke: #4691f6;
   stroke-width: 1;
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+#home {
+  /* width: 200px; */
+  /* height: 200px; */
+  background-image: url('../images/image-background.webp');
+  /* background-image: url(http://placekitten.com/400/200); */
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  height: 100vh;
+  animation: animatedBackground 10s linear infinite alternate;
 }
