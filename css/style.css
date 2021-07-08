@@ -10,10 +10,7 @@ body {
 
 $background: #00356B;
 
-canvas {
-  display: block;
-  vertical-align: bottom;
-}
+
 
 #particles-js {
   position: absolute;
