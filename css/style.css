@@ -112,6 +112,7 @@ a {
 a:hover, a:active, a:focus {
   color: #8c4d63;
   outline: none;
+  font-weight: bold;
 }
 
 
