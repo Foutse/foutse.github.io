@@ -73,7 +73,7 @@ p {
 .card-body {
   /* margin: 0 auto; */ /* Added */
   /* margin-bottom: 15px; */ /* Added */
-  text-align: left;
+  text-align: justify;
   height:auto;
   width: 100;
   /*padding-top: 20%;
