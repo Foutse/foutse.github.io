@@ -102,14 +102,14 @@ html{
 }
 
 a {
-  color: #4d638c;
+  color: #8c4d63;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
   text-decoration: none !important;
 }
 a:hover, a:active, a:focus {
-  color: red;
+  color: #4d638c;
   outline: none;
 }
 
