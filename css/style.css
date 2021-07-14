@@ -102,7 +102,7 @@ html{
 }
 
 a {
-  color: #4d638c;
+  color: red;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -112,6 +112,7 @@ a:hover, a:active, a:focus {
   color: #4d638c;
   outline: none;
 }
+
 
 * {
   -webkit-box-sizing: border-box;
