@@ -1,105 +1,850 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="author" content="">
-<meta name="viewport" content="width=device-width>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Foutse Yuehgoh, Ph.D — AI Researcher & Data Scientist. Graph Theory, Knowledge Graphs, Recommendation Systems, NLP, LLMs. Award-winning publications at ACL, NAACL, FAccT.">
+<meta name="keywords" content="Foutse Yuehgoh, AI, Data Scientist, NLP, Knowledge Graphs, Cybersecurity, GRC, Deep Learning Indaba">
+<meta name="author" content="Foutse Yuehgoh">
+<title>Foutse Yuehgoh, Ph.D</title>
 <link rel="icon" type="image/png" href="image/leaf.png"/>
-<title>Foutsey</title>
-<link rel="icon" href="images/scmt.jpeg" sizes="32x32" type="image/jpeg">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root {
+    --bg: #FDFBF7;
+    --bg-alt: #F5F0E8;
+    --text: #1A1A1A;
+    --text-secondary: #555;
+    --accent: #B8860B;
+    --accent-light: #DAA520;
+    --accent-bg: rgba(184, 134, 11, 0.07);
+    --border: #E0D8C8;
+    --card-bg: #FFFFFF;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'DM Sans', -apple-system, sans-serif;
+    --max-w: 1100px;
+    --radius: 10px;
+  }
 
-<!-- Main css -->
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css?family=Lora|Merriweather:300,400" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(253, 251, 247, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+  nav .nav-inner {
+    max-width: var(--max-w); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.8rem 2rem;
+  }
+  nav .logo {
+    font-family: var(--serif); font-size: 1.3rem; color: var(--text);
+    text-decoration: none; font-style: italic;
+  }
+  nav .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+  nav .nav-links a {
+    text-decoration: none; color: var(--text-secondary);
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  nav .nav-links a:hover { color: var(--accent); }
+
+  .hamburger { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text); }
+
+  /* ─── HERO ─── */
+  .hero {
+    max-width: var(--max-w); margin: 0 auto;
+    padding: 10rem 2rem 5rem;
+    display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem;
+    align-items: center;
+  }
+  .hero-img-wrap {
+    position: relative;
+  }
+  .hero-img-wrap::before {
+    content: ''; position: absolute; inset: 12px -12px -12px 12px;
+    border: 2px solid var(--accent); border-radius: var(--radius);
+    z-index: 0;
+  }
+  .hero-img-wrap img {
+    position: relative; z-index: 1;
+    width: 100%; border-radius: var(--radius);
+    object-fit: cover; aspect-ratio: 4/5;
+    filter: grayscale(10%);
+  }
+  .hero-text h1 {
+    font-family: var(--serif); font-size: 3.2rem; line-height: 1.15;
+    margin-bottom: 0.3rem;
+  }
+  .hero-text h1 span { color: var(--accent); font-style: italic; }
+  .hero-text .tagline {
+    font-size: 1.1rem; color: var(--text-secondary);
+    margin-bottom: 1.5rem; font-weight: 300;
+  }
+  .hero-text p { color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 0.97rem; }
+  .hero-socials { display: flex; gap: 1rem; margin-top: 1.5rem; }
+  .hero-socials a {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border); border-radius: 50%;
+    color: var(--text-secondary); font-size: 1rem;
+    transition: all 0.25s;
+    text-decoration: none;
+  }
+  .hero-socials a:hover {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: var(--max-w); margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: 2.4rem; margin-bottom: 2.5rem;
+    line-height: 1.2;
+  }
+  .section-alt { background: var(--bg-alt); }
+
+  /* ─── EXPERIENCE ─── */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 2px; background: var(--border);
+  }
+  .timeline-item { position: relative; margin-bottom: 3rem; }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -2rem; top: 0.45rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); border: 3px solid var(--bg);
+    transform: translateX(-5px);
+  }
+  .section-alt .timeline-item::before { border-color: var(--bg-alt); }
+  .timeline-item .date {
+    font-size: 0.8rem; color: var(--accent); font-weight: 600;
+    letter-spacing: 0.04em; margin-bottom: 0.2rem;
+  }
+  .timeline-item h3 { font-size: 1.2rem; margin-bottom: 0.15rem; }
+  .timeline-item .company {
+    font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.6rem;
+    font-style: italic;
+  }
+  .timeline-item ul {
+    list-style: none; padding: 0;
+  }
+  .timeline-item li {
+    position: relative; padding-left: 1.2rem; margin-bottom: 0.45rem;
+    color: var(--text-secondary); font-size: 0.93rem;
+  }
+  .timeline-item li::before {
+    content: '→'; position: absolute; left: 0; color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ─── CARDS GRID ─── */
+  .cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.8rem;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  }
+  .card .card-icon {
+    width: 42px; height: 42px; border-radius: 8px;
+    background: var(--accent-bg);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent); font-size: 1.1rem; margin-bottom: 1rem;
+  }
+  .card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+  .card .card-tag {
+    display: inline-block; margin-top: 0.8rem;
+    font-size: 0.75rem; padding: 0.25rem 0.7rem;
+    background: var(--accent-bg); color: var(--accent);
+    border-radius: 20px; font-weight: 600;
+  }
+
+  /* ─── PUBLICATIONS ─── */
+  .pub-item {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-item .pub-year {
+    font-size: 0.75rem; font-weight: 700; color: var(--accent);
+    letter-spacing: 0.06em; margin-bottom: 0.3rem;
+  }
+  .pub-item .pub-type {
+    display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem;
+    background: var(--accent-bg); color: var(--accent);
+    border-radius: 4px; font-weight: 600; margin-left: 0.5rem;
+    text-transform: uppercase; vertical-align: middle;
+  }
+  .pub-item h4 { font-size: 0.97rem; margin-bottom: 0.25rem; line-height: 1.5; font-weight: 500; }
+  .pub-item .pub-venue { font-size: 0.85rem; color: var(--text-secondary); font-style: italic; }
+  .pub-item a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  .pub-item a:hover { text-decoration: underline; }
+
+  /* ─── SKILLS ─── */
+  .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
+  .skill-tag {
+    padding: 0.4rem 1rem; border: 1px solid var(--border);
+    border-radius: 20px; font-size: 0.85rem; color: var(--text-secondary);
+    transition: all 0.2s; cursor: default;
+  }
+  .skill-tag:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+  .skill-tag.highlight { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); font-weight: 500; }
+
+  /* ─── COMMUNITY ─── */
+  .community-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .community-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem;
+  }
+  .community-card h3 {
+    font-size: 1rem; margin-bottom: 0.4rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .community-card h3 .badge {
+    font-size: 0.65rem; padding: 0.15rem 0.5rem;
+    background: var(--accent); color: #fff;
+    border-radius: 4px; font-weight: 600; text-transform: uppercase;
+  }
+  .community-card p { color: var(--text-secondary); font-size: 0.88rem; }
+
+  /* ─── AWARDS ─── */
+  .awards-list { display: flex; flex-direction: column; gap: 1rem; }
+  .award-item {
+    display: grid; grid-template-columns: 100px 1fr; gap: 1.5rem;
+    align-items: start; padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .award-item:last-child { border-bottom: none; }
+  .award-item .award-year {
+    font-family: var(--serif); font-size: 1.4rem; color: var(--accent);
+    font-style: italic;
+  }
+  .award-item h4 { font-size: 0.95rem; margin-bottom: 0.2rem; }
+  .award-item p { font-size: 0.87rem; color: var(--text-secondary); }
+
+  /* ─── QUOTE ─── */
+  .quote-section {
+    text-align: center; padding: 4rem 2rem;
+    background: var(--text); color: var(--bg);
+  }
+  .quote-section blockquote {
+    font-family: var(--serif); font-size: 1.5rem; font-style: italic;
+    max-width: 700px; margin: 0 auto 1rem; line-height: 1.6;
+  }
+  .quote-section cite { font-size: 0.85rem; opacity: 0.6; font-style: normal; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center; padding: 3rem 2rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+  footer .footer-socials { display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem; }
+  footer .footer-socials a {
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border); border-radius: 50%;
+    color: var(--text-secondary); font-size: 1.1rem;
+    transition: all 0.25s; text-decoration: none;
+  }
+  footer .footer-socials a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  footer p { font-size: 0.8rem; color: var(--text-secondary); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 2rem; }
+    .hero-img-wrap { max-width: 260px; margin: 0 auto; }
+    .hero-text { text-align: center; }
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-socials { justify-content: center; }
+    .section-title { font-size: 1.8rem; }
+    section { padding: 3rem 1.5rem; }
+    .nav-links { display: none !important; }
+    .hamburger { display: block; }
+    nav.open .nav-links {
+      display: flex !important; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem; gap: 1rem;
+    }
+    .award-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .community-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-in {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
 </head>
-                                                                                           
 <body>
 
-<!-- Home Section -->
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">Foutse Y.</a>
+    <button class="hamburger" onclick="document.getElementById('navbar').classList.toggle('open')">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#story">My Story</a></li>
+      <li><a href="#about">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#awards">Awards</a></li>
+    </ul>
+  </div>
+</nav>
 
-<section id="home">
-<div class = "overlay"></div> 
-	  <div id = "particles-js"></div> 
-		<script type = "text/javascript" src="particles.js"></script>
-        <script  type = "text/javascript" src="app.js"></script> 
-		<div class="container">
-          <div class="col-md-12 col-sm-6">
-               <div class="card">
-                    <img src="images/me.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    </br></br>
-                         <h1>Foutse YUEHGOH</h1>
-                          <!-- (She/Her) -->
-                    </br>
-                    I am a young researcher who aspires to inspire :), striving to have a positive impact in the field of Natural Language 
-                    Processing (NLP). In my free time, I love to volunteer. Given my strong 
-                    desire and passion to increase the active participation of women and young 
-                    girls in STEM fields and above all demystify Artificial intelligence (AI) in 
-                    my home country, together with my friends, I founded the <a href="https://www.linkedin.com/in/kmer-ai-ba7712191" target="_blank">KmerAI</a> 
-                     community, and co-founded <a href="https://www.linkedin.com/in/women-promoting-science-to-the-younger-association-661a5317b" target="_blank">WPSYG</a>
-                      (Women Promoting Sciences to the Younger Generation) association. In addition to that, 
-                      I am equally a co-organizer for the Women in Machine Learning & Data Sciences (<a href="http://wimlds.org/" target="_blank">WiMLDS</a>), 
-                      Yaoundé <a href="https://www.linkedin.com/company/wimlds-yaounde" target="_blank">chapter</a> , Chapter Lead for the Omdena <a href="https://omdena.com/omdena-chapter-page-cameroon/" target="_blank">Cameroon local chapter</a>,
-                      and a volunteer at <a href="https://blackinai.github.io/#/" target="_blank">Black in AI</a>. 
-                      I hold a Bachelor of Science degree in Mathematics and Computer Science (minor) from 
-                      the University of Buea, Cameroon and two Master's degree - one in Big Data and Computer security, 
-                      and the other in Information and Data processing from the African Institute for Mathematical Sciences (AIMS), 
-                      Senegal and the University of Paris Saclay, France respectively. I hold a PhD in Computer Science from Conservatoire National des Arts et Métiers (CNAM) in partnership with the De Vinci Research Center (DVRC) 
-		      and the company Coexel. My work was at the intersection of graphs and NLP for recommender systems. The main objective of my work was to define 
-		      an optimized system for information retrieval and recommendation of technological development. I listen to music a lot, and I love singing and 
-		      dansing. My favorite sports are tennis, ping pong and volleyball.
-                    
-                  <!--   She is a Cameroonian researcher who loves singing and listens to music a lot. Her favorite sports are tennis, ping pong and volleyball. 
-                    She aspires to inspire :), hoping to have a positive impact in the field of 
-                    Natural Language Processing (NLP). She co-founded an association called Women 
-                    Promoting Sciences to the Younger Generation (<a href="https://www.linkedin.com/in/women-promoting-science-to-the-younger-association-661a5317b" target="_blank">WPSYG</a>) to promote and encourage 
-                    youths (girls in particular) into STEM fields. Given her desire to demystify 
-                    Artificial Intelligence (AI) in her country, with friends she founded the community 
-                    <a href="https://www.linkedin.com/in/kmer-ai-ba7712191" target="_blank">KmerAI</a> to serve that purpose. She loves to volunteer in anything that aims at promoting
-                     others in these fields. As a result she volunteers at the <a href="https://blackinai.github.io/#/" target="_blank">Black in AI</a> community, and is
-                      equally a Co-organizer of the <a href="http://wimlds.org/" target="_blank">WiMLDS</a> Yaounde <a href="https://www.linkedin.com/company/wimlds-yaounde" target="_blank">chapter</a>. She is currently preparing a P.h.D
-                       thesis in Computer Sciences entitled “Real-Time Recommendation of Technological 
-                       Developments for  Multi-Criteria Profiles Enhancement”. The main objective of her 
-                       work is to define an optimized system for information retrieval and  recommendation of 
-                       technological development. She holds a Bachelors in Mathematics & computer science (minor)
-                        from the University of Buea, Cameroon and two Masters degrees, one in Big data and 
-                        Computer security and the other in information and data processing from the African  
-                        institute of Mathematical Sciences (AIMS), Senegal and the University of Paris Saclay, 
-                        France respectively. -->
-                         </br>
-                    </div>
-                    
-               </div>
-          <hr> 
-          “In vain have you acquired knowledge if you have not imparted it to others”. --Deuteronomy Rabbah. 
-     </br></br>
-          Let's get in touch!!!
-     </div>
-     
-               <div class="col-md-12 col-sm-12">
-                    <ul class="social-icon">
-                         <li><a href="https://github.com/foutse" title="Github" class="fa fa-github" target="_blank" rel="noopener noreferrer"></a></li>
-                         <li><a href="https://www.linkedin.com/in/foutse-yuehgoh-phd-9105b184/" title="LinkedIn" class="fa fa-linkedin" target="_blank" rel="noopener noreferrer"></a></li>
-                         <li><a href="https://twitter.com/yuehgoh" title="Twitter" class="fa fa-twitter" target="_blank" rel="noopener noreferrer"></a></li>
-                         <li><a href="https://medium.com/@mefoutse" title="Medium" class="fa fa-medium" target="_blank" rel="noopener noreferrer"></a></li>
-                         <!-- <li><a href="https://resume.io/" title="Resume" class="fa fa-user" target="_blank" rel="noopener noreferrer"></a></li> -->
-                         <li><a href="mailto:foutse.yuehgoh@aims-senegal.org" title="Gmail" class="fa fa-envelope" target="_blank" rel="noopener noreferrer"></a></li>
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="hero-img-wrap">
+    <img src="images/me.jpeg" alt="Foutse Yuehgoh">
+  </div>
+  <div class="hero-text">
+    <h1>Foutse <span>Yuehgoh</span>, Ph.D</h1>
+    <p class="tagline">AI Researcher &amp; Data Scientist · Toulon, France</p>
+    <p>
+      I'm an AI researcher and data scientist specialized in graph theory, knowledge graphs, recommendation systems, and NLP.
+      Currently at <strong>EGERIE</strong>, I apply my AI expertise to cybersecurity compliance — building automated pipelines
+      that transform complex regulatory documents into structured, actionable intelligence across European frameworks.
+    </p>
+    <p>
+      I hold a Ph.D in Computer Science from CNAM Paris, where my research focused on multiplex graph-based
+      recommendation systems. I contribute to award-winning collaborative research on African languages and healthcare AI,
+      and I'm deeply invested in growing the African AI ecosystem — serving as
+      <strong>Chair of the Application &amp; Selection Committee for Deep Learning Indaba 2026</strong>
+      in Nigeria and co-organizing IndabaX Cameroon since 2020.
+    </p>
+    <div class="hero-socials">
+      <a href="https://github.com/foutse" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/foutse-yuehgoh-phd-9105b184/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://scholar.google.com/citations?user=0xPvl2EAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+      <a href="https://www.youtube.com/@GivenTGive" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://medium.com/@mefoutse" target="_blank" title="Medium"><i class="fa-brands fa-medium"></i></a>
+      <a href="mailto:foutse.yuehgoh@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://drive.google.com/drive/folders/1pbf72uWgs3VpKeQEMtSqkjUwIurtTXqN?usp=drive_link" target="_blank" title="Download CV"><i class="fa-solid fa-file-pdf"></i></a>
+    </div>
+  </div>
+</header>
 
-                         <li><a href="https://drive.google.com/drive/folders/1pbf72uWgs3VpKeQEMtSqkjUwIurtTXqN?usp=drive_link" 
-                              title="Download Resume" class="fa fa-file" target="_blank" rel="noopener noreferrer"></a></li>
-                    </ul>
-               </div>
-          
-     </div>
+<!-- QUOTE -->
+<div class="quote-section">
+  <blockquote>"Let love lead."</blockquote>
+  <cite>— This simple yet profound quote guides how I work, collaborate, and live.</cite>
+</div>
+
+<!-- MY STORY -->
+<section id="story">
+  <div class="section-inner fade-in">
+    <p class="section-label">My Journey</p>
+    <h2 class="section-title">From Cameroon to AI Research</h2>
+
+    <div style="max-width: 800px;">
+    <p style="color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.8;">
+      Growing up, my parents dreamed I would become a medical doctor. But in school, I was drawn to mathematics — I especially loved discussing what I learned with my dad, who had a way of connecting abstract concepts to real-life applications. When the medical entrance exams didn't work out, I realized that wasn't my path, and I chose to study what I was most passionate about.
+    </p>
+    <p style="color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.8;">
+      My real curiosity was in computer science, fueled by action-packed series like <em>Nikita</em> and <em>24</em> that sparked a fascination with technology. Since my university didn't offer a CS bachelor's, I majored in mathematics with a computer science minor — and that changed everything. During internships, I built SMS applications and even a love-match website. My boss at the time, Fritz Ekwoge, became a key mentor who first introduced me to AI and told me it was the future of tech.
+    </p>
+    <p style="color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.8;">
+      A friend, Ulrich, later introduced me to Big Data — the perfect blend of my two passions. When I learned AIMS was offering a program in it, I applied immediately. From there, a scholarship to Paris Saclay, then a CIFRE PhD combining industry and research, and eventually my current work in cybersecurity GRC and African AI.
+    </p>
+    <p style="color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.8;">
+      Throughout this journey, I often found myself as part of a minority — a woman in a male-dominated field. Transitioning from an Anglophone to a Francophone education system added another layer of challenge. But navigating both worlds became a strength, giving me a unique perspective and adaptability that I carry into everything I do today.
+    </p>
+    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8;">
+      I've been fortunate to have supportive parents, inspiring siblings, and hardworking friends who never gave up. One of my most cherished memories is receiving the best student award in my region during secondary school — the only academic recognition my father witnessed before his passing. I carry that memory with deep gratitude. Outside of work, I love singing and dancing, and I've recently developed a passion for <a href="https://www.youtube.com/@GivenTGive" target="_blank" style="color: var(--accent);">creating music with AI</a> — an exciting blend of creativity and technology.
+    </p>
+    </div>
+  </div>
 </section>
+
+<!-- ABOUT / SKILLS -->
+<section id="about" class="section-alt">
+  <div class="section-inner fade-in">
+    <p class="section-label">What I Do</p>
+    <h2 class="section-title">Expertise &amp; Skills</h2>
+
+    <div style="margin-bottom: 2rem;">
+      <h3 style="font-size: 1rem; margin-bottom: 0.8rem; color: var(--accent);">Core Expertise</h3>
+      <div class="skills-wrap">
+        <span class="skill-tag highlight">Graph Theory</span>
+        <span class="skill-tag highlight">Knowledge Graphs</span>
+        <span class="skill-tag highlight">Graph Data Science</span>
+        <span class="skill-tag highlight">Recommendation Systems</span>
+        <span class="skill-tag highlight">Natural Language Processing</span>
+        <span class="skill-tag highlight">Machine Learning</span>
+        <span class="skill-tag highlight">Deep Learning</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 2rem;">
+      <h3 style="font-size: 1rem; margin-bottom: 0.8rem; color: var(--accent);">Applied AI</h3>
+      <div class="skills-wrap">
+        <span class="skill-tag highlight">Large Language Models</span>
+        <span class="skill-tag highlight">RAG Systems</span>
+        <span class="skill-tag highlight">Agentic AI</span>
+        <span class="skill-tag">Prompt Engineering</span>
+        <span class="skill-tag">Information Retrieval</span>
+        <span class="skill-tag">Document Intelligence</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 2rem;">
+      <h3 style="font-size: 1rem; margin-bottom: 0.8rem; color: var(--accent);">Current Domain Application</h3>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.8rem;">Applying my AI and graph expertise to cybersecurity governance, risk, and compliance at EGERIE:</p>
+      <div class="skills-wrap">
+        <span class="skill-tag">Cybersecurity GRC</span>
+        <span class="skill-tag">NIST 800-53</span>
+        <span class="skill-tag">ISO 27001 / 27002</span>
+        <span class="skill-tag">NIS2</span>
+        <span class="skill-tag">DORA</span>
+        <span class="skill-tag">SecNumCloud</span>
+        <span class="skill-tag">ANSSI 3CF</span>
+        <span class="skill-tag">RGPD</span>
+        <span class="skill-tag">SCF / OSCAL</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 2rem;">
+      <h3 style="font-size: 1rem; margin-bottom: 0.8rem; color: var(--accent);">Tools &amp; Tech Stack</h3>
+      <div class="skills-wrap">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Cypher / Neo4j</span>
+        <span class="skill-tag">LangChain</span>
+        <span class="skill-tag">LlamaIndex</span>
+        <span class="skill-tag">FastAPI</span>
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">pdfplumber / PyMuPDF</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">AWS (App Runner, ECR)</span>
+        <span class="skill-tag">GitLab CI/CD</span>
+        <span class="skill-tag">n8n</span>
+        <span class="skill-tag">Elasticsearch</span>
+        <span class="skill-tag">Faiss / Chroma</span>
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">NeoDash</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner fade-in">
+    <p class="section-label">Career</p>
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="date">January 2025 – Present</div>
+        <h3>Data Scientist</h3>
+        <div class="company">EGERIE · Toulon, France</div>
+        <ul>
+          <li>Built automated GRC data extraction pipelines for French cybersecurity regulatory PDFs (3CF v3, IGI 901, ANSSI, DORA, NIS2, SecNumCloud) using pdfplumber and GPT APIs, transforming unstructured documents into structured JSON.</li>
+          <li>Developed and deployed a collaborative GRC Navigator web platform (FastAPI + AWS App Runner via ECR/Docker) enabling multi-user review of 288 controls and 2,272 canonical tasks across 7 regulatory frameworks.</li>
+          <li>Conducted NIST 800-53 / SCF / European framework mapping analysis, identifying 491/523 EU-relevant controls, and designed a two-level canonical controls clustering methodology (universal + framework-specific).</li>
+          <li>Implemented and validated a RAG prototype on SCF data during probation period, demonstrating feasibility of structured information access over compliance document corpora.</li>
+          <li>Built document processing solutions for cross-departmental needs: PDF information extraction, format conversions (XLS → XML), and data standardization for downstream integration.</li>
+          <li>Delivered an internal presentation on AI best practices in enterprise: data confidentiality, prompt hygiene, and responsible use of AI tools with sensitive documents.</li>
+          <li>Led cross-functional integration of AI services across departments to improve efficiency and decision-making.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">March 2021 – September 2024</div>
+        <h3>Research Scientist</h3>
+        <div class="company">COEXEL · Toulon, France</div>
+        <ul>
+          <li>Developed automated news article and tag recommendation systems for newsletter creation, improving content curation efficiency.</li>
+          <li>Created an information retrieval system using LLMs and vector databases (Faiss, Chroma) to enable seamless interaction with extensive document collections.</li>
+          <li>Conducted Ph.D research on multiplex graph-based recommendation systems at the intersection of graph theory and NLP, in partnership with CNAM Paris and De Vinci Research Center.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">July 2020 – March 2021</div>
+        <h3>Data Analyst</h3>
+        <div class="company">COEXEL · Toulon, France</div>
+        <ul>
+          <li>Developed a document recommendation platform leveraging topic modeling to analyze and match documents to the top 10 themes for timely, relevant recommendations with source URL tracing.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">September 2019 – April 2020</div>
+        <h3>Data Scientist Intern</h3>
+        <div class="company">Group PSA (now Stellantis) · Vélizy, France</div>
+        <ul>
+          <li>Audio data analysis and signal processing using deep learning and ML models for classifying noise levels in FM audio signals (spectrogram, feature extraction, raw amplitude).</li>
+          <li>Work resulted in a <strong>patent</strong> for an innovative audio signal processing technique.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section-alt">
+  <div class="section-inner fade-in">
+    <p class="section-label">Building</p>
+    <h2 class="section-title">Projects &amp; Supervision</h2>
+
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3>FarmA</h3>
+        <p>USSD-based agricultural advisory platform designed for rural communities in Kenya. Provides crop guidance, market prices, and weather alerts to farmers without internet access via basic mobile phones.</p>
+        <span class="card-tag">Social Impact</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div>
+        <h3>SkillMatch AI</h3>
+        <p>Internship supervision project building a competency matching system using Neo4j knowledge graphs and a LangChain recommendation agent for skills-to-opportunity mapping.</p>
+        <span class="card-tag">Internship Supervision</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-water"></i></div>
+        <h3>HydroAs</h3>
+        <p>Flood prediction and modeling research project. Winner of WWF INNO Student Challenge 2023 (€10,000 funding) and finalist at TU Delft Impact Contest 2021.</p>
+        <span class="card-tag">Award-winning</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+        <h3>Knowledge Graphs Meet Agentic AI</h3>
+        <p>Tutorial prepared for Deep Learning Indaba 2026 covering Neo4j, GraphRAG, and African AI sovereignty. Includes a 27-slide deck and interactive Colab notebook.</p>
+        <span class="card-tag">Tutorial</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h3>PI²4 – ESILV Recommendation Systems</h3>
+        <p>Year 4 industrial innovation project supervision at ESILV engineering school, guiding students on building recommendation systems.</p>
+        <span class="card-tag">Supervision</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-gamepad"></i></div>
+        <h3>Gaming NPCs &amp; Climate Bias Detection</h3>
+        <p>Open projects with Omdena: creating lifelike non-player characters with procedural tasks, and detecting bias in climate reporting across English and German news media.</p>
+        <span class="card-tag">Open Source</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-inner fade-in">
+    <p class="section-label">Research</p>
+    <h2 class="section-title">Publications</h2>
+
+    <div class="pub-item">
+      <div class="pub-year">2025 <span class="pub-type" style="background: #d4af37; color: #fff;">ACL — Best Social Impact Paper Award</span></div>
+      <h4>AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset.</h4>
+      <div class="pub-venue">Tobi Olatunji, Charles Nimo, ..., <strong>Foutse Yuehgoh</strong>, et al. — ACL 2025 Main Conference. <a href="https://arxiv.org/abs/2411.15640">arXiv</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2025 <span class="pub-type" style="background: #d4af37; color: #fff;">NAACL — Outstanding Paper Award</span></div>
+      <h4>IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models.</h4>
+      <div class="pub-venue">David I. Adelani, Jessica Ojo, ..., <strong>Foutse Yuehgoh</strong>, et al. — NAACL 2025. <a href="https://aclanthology.org/2025.naacl-long.139/">ACL Anthology</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2025 <span class="pub-type" style="background: #d4af37; color: #fff;">FAccT — Honorable Mention Best Paper</span></div>
+      <h4>The World Wide Recipe: A community-centred framework for fine-grained data collection and regional bias operationalisation.</h4>
+      <div class="pub-venue">FAccT 2025. <a href="https://dl.acm.org/doi/full/10.1145/3715275.3732019">ACM DL</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2025 <span class="pub-type">Conference</span></div>
+      <h4>The Human Labour of Data Work: Capturing Cultural Diversity through World Wide Dishes.</h4>
+      <div class="pub-venue">2025.</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2024 <span class="pub-type">Conference</span></div>
+      <h4>AfriMTE and AfriCOMET: Enhancing COMET to Embrace Under-resourced African Languages.</h4>
+      <div class="pub-venue">Jiayi Wang, David I. Adelani, ..., <strong>Foutse Yuehgoh</strong>, et al. <a href="https://arxiv.org/abs/2311.09828">arXiv</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2024 <span class="pub-type">Conference</span></div>
+      <h4>How to Recommend Multidimensional Data with a Multiplex Graph?</h4>
+      <div class="pub-venue">Foutse Yuehgoh, et al. — 16th Asian Conference on Intelligent Information and Database Systems (ACIIDS 2024). <a href="https://link.springer.com/chapter/10.1007/978-981-97-4985-0_26">Link</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2022 <span class="pub-type">Conference</span></div>
+      <h4>A Multiplex Network Framework Based Recommendation Systems for Technology Intelligence.</h4>
+      <div class="pub-venue">Foutse Yuehgoh, et al. — New Trends in Database and Information Systems (ADBIS 2022). <a href="https://link.springer.com/chapter/10.1007/978-3-031-15743-1_32">Link</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2017 <span class="pub-type">Conference</span></div>
+      <h4>Return of experience on the mean-shift clustering for heterogeneous architecture use case.</h4>
+      <div class="pub-venue">Christophe Cérin, Jean-Luc Gaudiot, Mustapha Lebbah, Foutse Yuehgoh — 2017 IEEE International Conference on Big Data. <a href="https://ieeexplore.ieee.org/abstract/document/8258339">Link</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2022 <span class="pub-type">Workshop</span></div>
+      <h4>A Technology Intelligence Recommendation System based on Multiplex Networks.</h4>
+      <div class="pub-venue">17th Women in Machine Learning Workshop (WiML), co-located with NeurIPS 2022, New Orleans, USA. <a href="https://hal.science/hal-04091140">Link</a> · Also presented at MADICS Symposium (Lyon) and Deep Learning Indaba 2022 (Tunis).</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2018 <span class="pub-type">Workshop</span></div>
+      <h4>Mean-Shift Clustering for Heterogeneous Architecture.</h4>
+      <div class="pub-venue">Deep Learning Indaba 2018, Stellenbosch University, South Africa. <a href="https://www.researchgate.net/publication/329337551_MEAN-SHIFT_CLUSTERING_FOR_HETEROGENEOUS_ARCHITECTURE">Link</a></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community" class="section-alt">
+  <div class="section-inner fade-in">
+    <p class="section-label">Impact</p>
+    <h2 class="section-title">Community &amp; Leadership</h2>
+
+    <div class="community-grid">
+
+      <div class="community-card">
+        <h3><i class="fa-solid fa-star" style="color: var(--accent);"></i> Deep Learning Indaba 2026 <span class="badge">Chair</span></h3>
+        <p>Chair of the Application &amp; Selection Committee for Deep Learning Indaba 2026 in Nigeria — Africa's premier machine learning conference. Responsible for designing application forms, coordinating tester feedback, and leading the selection process.</p>
+      </div>
+
+      <div class="community-card">
+        <h3><i class="fa-solid fa-users" style="color: var(--accent);"></i> IndabaX Cameroon <span class="badge">Co-organizer</span></h3>
+        <p>Co-organizer since 2020. Led the IndabaX Cameroon 2026 conference (May 12–14, Université de Ngaoundéré): committee updates, program schedule design, and speaker coordination.</p>
+      </div>
+
+      <div class="community-card">
+        <h3><i class="fa-solid fa-lightbulb" style="color: var(--accent);"></i> KmerAI <span class="badge">Founder</span></h3>
+        <p>President &amp; founder of <a href="https://sites.google.com/view/kmerai-2022/home" target="_blank" style="color: var(--accent);">KmerAI</a>, a community dedicated to demystifying AI in Cameroon and increasing active participation of women and young people in STEM.</p>
+      </div>
+
+      <div class="community-card">
+        <h3><i class="fa-solid fa-venus" style="color: var(--accent);"></i> WiMLDS Yaoundé</h3>
+        <p>Co-organizer of the <a href="http://wimlds.org/about-the-yaounde-team-2/" target="_blank" style="color: var(--accent);">Women in Machine Learning &amp; Data Science</a> Yaoundé chapter. Organizing workshops, talks, and mentoring events.</p>
+      </div>
+
+      <div class="community-card">
+        <h3><i class="fa-solid fa-globe" style="color: var(--accent);"></i> Black in AI &amp; WiML at NeurIPS</h3>
+        <p>Conference organizer for Black in AI and Women in Machine Learning workshops at NeurIPS since 2020. Contributing to diversity and representation in AI research.</p>
+      </div>
+
+      <div class="community-card">
+        <h3><i class="fa-solid fa-hand-holding-heart" style="color: var(--accent);"></i> Mentorship</h3>
+        <p>Remote mentorship for <a href="https://afev.org/" target="_blank" style="color: var(--accent);">Afev</a>, <a href="https://www.aighana.org/" target="_blank" style="color: var(--accent);">AI Ghana</a>, and <a href="https://aisaturdayslagos.github.io/" target="_blank" style="color: var(--accent);">AI Saturday Lagos</a> (2021–2023). Co-founded WPSYG (Women Promoting Sciences to the Younger Generation) to encourage girls in STEM.</p>
+      </div>
+
+      <div class="community-card">
+        <h3><i class="fa-brands fa-youtube" style="color: var(--accent);"></i> AI Music Creation</h3>
+        <p>Exploring the creative intersection of AI and music. Creating worship songs and original music using AI tools, and sharing the journey on <a href="https://www.youtube.com/@GivenTGive" target="_blank" style="color: var(--accent);">YouTube</a>.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-inner fade-in">
+    <p class="section-label">Recognition</p>
+    <h2 class="section-title">Awards &amp; Grants</h2>
+
+    <div class="awards-list">
+      <div class="award-item">
+        <div class="award-year">2025</div>
+        <div>
+          <h4>Best Social Impact Paper Award — ACL 2025</h4>
+          <p>AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2025</div>
+        <div>
+          <h4>Outstanding Paper Award — NAACL 2025</h4>
+          <p>IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2025</div>
+        <div>
+          <h4>Honorable Mention Best Paper — FAccT 2025</h4>
+          <p>The World Wide Recipe: A community-centred framework for fine-grained data collection and regional bias operationalisation.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2023</div>
+        <div>
+          <h4>WWF INNO Student Challenge — Winner</h4>
+          <p>€10,000 funding and professional coaching for the HydroAs flood prediction project.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2021</div>
+        <div>
+          <h4>TU Delft Impact Contest — Finalist</h4>
+          <p>HydroAs flood prediction and modeling project.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2018–24</div>
+        <div>
+          <h4>Travel Grants</h4>
+          <p>WiML grant to NeurIPS 2022, Black in AI grants to NeurIPS 2018, 2019, 2022, and CVPR 2024.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2018</div>
+        <div>
+          <h4>Excellence Scholarship — University of Paris Saclay</h4>
+          <p>Masters admission scholarship for Information Processing &amp; Data Exploitation.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2016</div>
+        <div>
+          <h4>MasterCard Foundation Scholarship — AIMS</h4>
+          <p>Masters admission at the African Institute for Mathematical Sciences, Senegal.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2009</div>
+        <div>
+          <h4>GCE Ordinary Levels Award</h4>
+          <p>Best student in the Adamawa region, Cameroon. Awarded by Les Brasseries du Cameroun.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION (brief) -->
+<section class="section-alt">
+  <div class="section-inner fade-in">
+    <p class="section-label">Background</p>
+    <h2 class="section-title">Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="date">2021 – 2024</div>
+        <h3>Ph.D in Computer Science</h3>
+        <div class="company">CNAM Paris · Doctoral School SMI – Engineering Science</div>
+        <ul>
+          <li><em>A Multiplex Graph-based Recommendation System for Multi-Criteria Profiles Enhancement.</em> In partnership with De Vinci Research Center and Coexel.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="date">2018 – 2019</div>
+        <h3>MSc in Information Processing &amp; Data Exploitation</h3>
+        <div class="company">University of Paris Saclay (UVSQ) · Faculty of Engineering</div>
+        <ul>
+          <li>Thesis: <em>Subjective Radio Quality Rating Through AI.</em></li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="date">2016 – 2018</div>
+        <h3>MSc in Mathematical Science</h3>
+        <div class="company">African Institute for Mathematical Sciences (AIMS) · Mbour, Senegal</div>
+        <ul>
+          <li>Thesis: <em>Mean-shift Clustering for Heterogeneous Architecture.</em> Grade: Distinction.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENCOURAGEMENT -->
+<div class="quote-section" style="background: var(--accent);">
+  <blockquote style="font-size: 1.3rem; max-width: 750px;">"To every young girl stepping into the world of STEM: You belong here. Don't be afraid to take up space. Ask questions, even the ones you think might sound too simple. That's how discovery begins. You don't have to be perfect — you just have to keep going. And as you rise, don't forget to look back and lift others with you."</blockquote>
+  <cite style="opacity: 0.8;">— Foutse Yuehgoh</cite>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-socials">
+    <a href="https://github.com/foutse" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/foutse-yuehgoh-phd-9105b184/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://scholar.google.com/citations?user=0xPvl2EAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+    <a href="https://www.youtube.com/@GivenTGive" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://medium.com/@mefoutse" target="_blank" title="Medium"><i class="fa-brands fa-medium"></i></a>
+    <a href="https://twitter.com/yuehgoh" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="mailto:foutse.yuehgoh@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+  </div>
+  <p>&copy; 2026 Foutse Yuehgoh · Let love lead. &#10084;</p>
+</footer>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navbar').classList.remove('open'));
+});
+</script>
 
 </body>
 </html>
