@@ -285,6 +285,49 @@
   footer .footer-socials a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
   footer p { font-size: 0.8rem; color: var(--text-secondary); }
 
+  /* ─── DATASETS ─── */
+  .dataset-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+    gap: 1.5rem;
+  }
+  .dataset-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.8rem;
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .dataset-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  }
+  .dataset-card .deco {
+    position: absolute; top: 0; right: 0;
+    width: 120px; height: 120px;
+    border-radius: 0 0 0 100%; opacity: 0.5;
+  }
+  .dataset-stat {
+    text-align: center; padding: 0.6rem; border-radius: 6px;
+  }
+  .dataset-stat .num {
+    font-family: var(--serif); font-size: 1.4rem; font-style: italic;
+  }
+  .dataset-stat .label {
+    font-size: 0.7rem; color: var(--text-secondary);
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .dataset-badge {
+    display: inline-block; font-size: 0.65rem; padding: 0.2rem 0.6rem;
+    border-radius: 4px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .dataset-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.55rem 1.2rem; background: var(--text); color: var(--bg);
+    text-decoration: none; border-radius: 6px;
+    font-size: 0.85rem; font-weight: 600; transition: all 0.2s;
+  }
+  .dataset-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 2rem; }
@@ -305,6 +348,7 @@
     .award-item { grid-template-columns: 1fr; gap: 0.3rem; }
     .cards-grid { grid-template-columns: 1fr; }
     .community-grid { grid-template-columns: 1fr; }
+    .dataset-grid { grid-template-columns: 1fr; }
   }
 
   /* ─── ANIMATIONS ─── */
@@ -329,6 +373,7 @@
       <li><a href="#about">Expertise</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#datasets">Datasets</a></li>
       <li><a href="#publications">Research</a></li>
       <li><a href="#community">Community</a></li>
       <li><a href="#awards">Awards</a></li>
@@ -617,13 +662,6 @@
         <span class="card-tag">Award-winning</span>
       </div>
 
-      <!--<div class="card">
-        <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
-        <h3>Knowledge Graphs Meet Agentic AI</h3>
-        <p>Tutorial prepared for Deep Learning Indaba 2026 covering Neo4j, GraphRAG, and African AI sovereignty. Application submitted, pending results notifiction.</p>
-        <span class="card-tag">Tutorial</span>
-      </div>
-      -->
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
         <h3>PI²4 – ESILV Recommendation Systems</h3>
@@ -636,6 +674,112 @@
         <h3>Gaming NPCs &amp; Climate Bias Detection</h3>
         <p>Open projects with Omdena: creating lifelike non-player characters with procedural tasks, and detecting bias in climate reporting across English and German news media.</p>
         <span class="card-tag">Open Source</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DATASETS -->
+<section id="datasets">
+  <div class="section-inner fade-in">
+    <p class="section-label">Open Science</p>
+    <h2 class="section-title">Open Datasets</h2>
+    <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 750px; margin-bottom: 2.5rem;">
+      Building high-quality, ML-ready datasets for African legal AI &mdash; addressing the near-total absence of African legal systems 
+      from NLP and graph ML research. Submitted to the <strong style="color: var(--text);">Deep Learning Indaba 2026</strong> African Datasets track.
+    </p>
+
+    <div class="dataset-grid">
+
+      <!-- Tabular Dataset -->
+      <div class="dataset-card" style="border-left: 3px solid var(--accent);">
+        <div class="deco" style="background: var(--accent-bg);"></div>
+        <div style="position: relative;">
+          <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap: wrap;">
+            <span class="dataset-badge" style="background: var(--accent); color: #fff;">NLP</span>
+            <span class="dataset-badge" style="background: var(--text); color: var(--bg);">DLI 2026</span>
+            <span class="dataset-badge" style="background: var(--accent-bg); color: var(--accent);">CC-BY-4.0</span>
+          </div>
+          <h3 style="font-family: var(--serif); font-size: 1.2rem; margin-bottom: 0.3rem;">OHADA-CCJA Court Decisions Corpus</h3>
+          <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.2rem; line-height: 1.7;">
+            The first structured, ML-ready corpus of OHADA supranational court decisions. 
+            Covers business law jurisprudence across 17 African member states with rich annotation layers: 
+            dispute summaries, judicial reasoning, rulings, legal domain labels, and cited articles.
+          </p>
+          
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-bottom: 1.2rem;">
+            <div class="dataset-stat" style="background: var(--accent-bg);">
+              <div class="num" style="color: var(--accent);">4,059</div>
+              <div class="label">Cases</div>
+            </div>
+            <div class="dataset-stat" style="background: var(--accent-bg);">
+              <div class="num" style="color: var(--accent);">16</div>
+              <div class="label">Legal domains</div>
+            </div>
+            <div class="dataset-stat" style="background: var(--accent-bg);">
+              <div class="num" style="color: var(--accent);">17</div>
+              <div class="label">Countries</div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Text Classification</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Summarization</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Legal NER</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">French</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">1997&ndash;2023</span>
+          </div>
+
+          <a href="https://huggingface.co/datasets/Maathis-com/ohada-ccja-corpus" target="_blank" class="dataset-btn">
+            <span style="font-size: 1.1rem;">&#129303;</span> View on Hugging Face
+          </a>
+        </div>
+      </div>
+
+      <!-- Graph Dataset -->
+      <div class="dataset-card" style="border-left: 3px solid #0E7490;">
+        <div class="deco" style="background: rgba(14, 116, 144, 0.07);"></div>
+        <div style="position: relative;">
+          <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap: wrap;">
+            <span class="dataset-badge" style="background: #0E7490; color: #fff;">Graph ML</span>
+            <span class="dataset-badge" style="background: var(--text); color: var(--bg);">DLI 2026</span>
+            <span class="dataset-badge" style="background: rgba(14, 116, 144, 0.07); color: #0E7490;">CC-BY-4.0</span>
+          </div>
+          <h3 style="font-family: var(--serif); font-size: 1.2rem; margin-bottom: 0.3rem;">OHADA-CCJA Legal Knowledge Graph</h3>
+          <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.2rem; line-height: 1.7;">
+            A heterogeneous knowledge graph capturing the relational structure of pan-African business law: 
+            inter-case citations, legal article references, party involvement, geographic origins, and 
+            Acte Uniforme mappings. Ships with PyTorch Geometric loader and Neo4j import scripts.
+          </p>
+          
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-bottom: 1.2rem;">
+            <div class="dataset-stat" style="background: rgba(14, 116, 144, 0.07);">
+              <div class="num" style="color: #0E7490;">11,131</div>
+              <div class="label">Nodes</div>
+            </div>
+            <div class="dataset-stat" style="background: rgba(14, 116, 144, 0.07);">
+              <div class="num" style="color: #0E7490;">33,408</div>
+              <div class="label">Edges</div>
+            </div>
+            <div class="dataset-stat" style="background: rgba(14, 116, 144, 0.07);">
+              <div class="num" style="color: #0E7490;">6</div>
+              <div class="label">Edge types</div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Link Prediction</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Node Classification</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Citation Network</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">PyG / Neo4j</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Heterogeneous</span>
+          </div>
+
+          <a href="https://huggingface.co/datasets/Maathis-com/ohada-ccja-graph" target="_blank" class="dataset-btn">
+            <span style="font-size: 1.1rem;">&#129303;</span> View on Hugging Face
+          </a>
+        </div>
       </div>
 
     </div>
