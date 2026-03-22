@@ -42,7 +42,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ─── NAV ─── */
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     background: rgba(253, 251, 247, 0.85);
@@ -70,7 +70,7 @@
 
   .hamburger { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text); }
 
-  /* ─── HERO ─── */
+  /* HERO */
   .hero {
     max-width: var(--max-w); margin: 0 auto;
     padding: 10rem 2rem 5rem;
@@ -115,7 +115,7 @@
     transform: translateY(-2px);
   }
 
-  /* ─── SECTIONS ─── */
+  /* SECTIONS */
   section { padding: 5rem 2rem; }
   .section-inner { max-width: var(--max-w); margin: 0 auto; }
   .section-label {
@@ -128,7 +128,7 @@
   }
   .section-alt { background: var(--bg-alt); }
 
-  /* ─── EXPERIENCE ─── */
+  /* EXPERIENCE */
   .timeline { position: relative; padding-left: 2rem; }
   .timeline::before {
     content: ''; position: absolute; left: 0; top: 0; bottom: 0;
@@ -159,11 +159,11 @@
     color: var(--text-secondary); font-size: 0.93rem;
   }
   .timeline-item li::before {
-    content: '→'; position: absolute; left: 0; color: var(--accent);
+    content: '\2192'; position: absolute; left: 0; color: var(--accent);
     font-weight: 600;
   }
 
-  /* ─── CARDS GRID ─── */
+  /* CARDS GRID */
   .cards-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
@@ -192,7 +192,7 @@
     border-radius: 20px; font-weight: 600;
   }
 
-  /* ─── PUBLICATIONS ─── */
+  /* PUBLICATIONS */
   .pub-item {
     padding: 1.4rem 0;
     border-bottom: 1px solid var(--border);
@@ -213,7 +213,7 @@
   .pub-item a { color: var(--accent); text-decoration: none; font-weight: 500; }
   .pub-item a:hover { text-decoration: underline; }
 
-  /* ─── SKILLS ─── */
+  /* SKILLS */
   .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
   .skill-tag {
     padding: 0.4rem 1rem; border: 1px solid var(--border);
@@ -223,7 +223,7 @@
   .skill-tag:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
   .skill-tag.highlight { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); font-weight: 500; }
 
-  /* ─── COMMUNITY ─── */
+  /* COMMUNITY */
   .community-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
@@ -243,7 +243,7 @@
   }
   .community-card p { color: var(--text-secondary); font-size: 0.88rem; }
 
-  /* ─── AWARDS ─── */
+  /* AWARDS */
   .awards-list { display: flex; flex-direction: column; gap: 1rem; }
   .award-item {
     display: grid; grid-template-columns: 100px 1fr; gap: 1.5rem;
@@ -258,7 +258,7 @@
   .award-item h4 { font-size: 0.95rem; margin-bottom: 0.2rem; }
   .award-item p { font-size: 0.87rem; color: var(--text-secondary); }
 
-  /* ─── QUOTE ─── */
+  /* QUOTE */
   .quote-section {
     text-align: center; padding: 4rem 2rem;
     background: var(--text); color: var(--bg);
@@ -269,7 +269,7 @@
   }
   .quote-section cite { font-size: 0.85rem; opacity: 0.6; font-style: normal; }
 
-  /* ─── FOOTER ─── */
+  /* FOOTER */
   footer {
     text-align: center; padding: 3rem 2rem 2rem;
     border-top: 1px solid var(--border);
@@ -285,7 +285,7 @@
   footer .footer-socials a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
   footer p { font-size: 0.8rem; color: var(--text-secondary); }
 
-  /* ─── DATASETS ─── */
+  /* DATASETS */
   .dataset-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
     gap: 1.5rem;
@@ -328,7 +328,7 @@
   }
   .dataset-btn:hover { opacity: 0.85; transform: translateY(-1px); }
 
-  /* ─── RESPONSIVE ─── */
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 2rem; }
     .hero-img-wrap { max-width: 260px; margin: 0 auto; }
@@ -351,7 +351,7 @@
     .dataset-grid { grid-template-columns: 1fr; }
   }
 
-  /* ─── ANIMATIONS ─── */
+  /* ANIMATIONS */
   .fade-in {
     opacity: 0; transform: translateY(24px);
     transition: opacity 0.7s ease, transform 0.7s ease;
@@ -388,10 +388,10 @@
   </div>
   <div class="hero-text">
     <h1>Foutse <span>Yuehgoh</span>, Ph.D</h1>
-    <p class="tagline">AI Researcher &amp; Data Scientist · Open to AI Leadership Roles · Toulon, France</p>
+    <p class="tagline">AI Researcher &amp; Data Scientist &middot; Open to AI Leadership Roles &middot; Toulon, France</p>
     <p>
       Ph.D in Computer Science with deep expertise in graph theory, knowledge graphs, recommendation systems, and NLP.
-      I bring 5+ years bridging AI research and product delivery — from designing intelligent pipelines and RAG systems
+      I bring 5+ years bridging AI research and product delivery &mdash; from designing intelligent pipelines and RAG systems
       to facilitating AI adoption across non-technical teams. I thrive at the intersection of technical depth and strategic vision.
     </p>
     <p>
@@ -415,7 +415,7 @@
 <!-- QUOTE -->
 <div class="quote-section">
   <blockquote>"Let love lead."</blockquote>
-  <cite>— This simple yet profound quote guides how I work, collaborate, and live.</cite>
+  <cite>&mdash; This simple yet profound quote guides how I work, collaborate, and live.</cite>
 </div>
 
 <!-- MY STORY -->
@@ -426,13 +426,13 @@
 
     <div style="max-width: 800px;">
     <p style="color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.8;">
-      I grew up in Cameroon, where my parents dreamed I'd become a doctor. Instead, I fell in love with mathematics — sparked by conversations with my father who connected abstract concepts to real life. That passion led me to a math degree with a CS minor, then a Big Data master's at AIMS Senegal, a second master's at Paris Saclay, and eventually a CIFRE PhD combining industry and research at CNAM Paris.
+      I grew up in Cameroon, where my parents dreamed I'd become a doctor. Instead, I fell in love with mathematics &mdash; sparked by conversations with my father who connected abstract concepts to real life. That passion led me to a math degree with a CS minor, then a Big Data master's at AIMS Senegal, a second master's at Paris Saclay, and eventually a CIFRE PhD combining industry and research at CNAM Paris.
     </p>
     <p style="color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.8;">
-      Along the way, I navigated being a woman in a male-dominated field and transitioned between Anglophone and Francophone education systems — challenges that became strengths, giving me adaptability, cross-cultural fluency, and a deep drive to open doors for the next generation. Outside of work, I love singing, dancing, and <a href="https://www.youtube.com/@GivenTGive" target="_blank" style="color: var(--accent);">creating music with AI</a>.
+      Along the way, I navigated being a woman in a male-dominated field and transitioned between Anglophone and Francophone education systems &mdash; challenges that became strengths, giving me adaptability, cross-cultural fluency, and a deep drive to open doors for the next generation. Outside of work, I love singing, dancing, and <a href="https://www.youtube.com/@GivenTGive" target="_blank" style="color: var(--accent);">creating music with AI</a>.
     </p>
     <p style="font-size: 0.9rem;">
-      <a href="https://wordsthatcount.org/african-women-in-data-science-foutse-yuehgoh/" target="_blank" style="color: var(--accent); font-weight: 500;">Read my full story on Words That Count →</a>
+      <a href="https://wordsthatcount.org/african-women-in-data-science-foutse-yuehgoh/" target="_blank" style="color: var(--accent); font-weight: 500;">Read my full story on Words That Count &rarr;</a>
     </p>
     </div>
   </div>
@@ -449,7 +449,7 @@
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-people-arrows"></i></div>
         <h3>Cross-functional Facilitation</h3>
-        <p>Experienced in translating AI concepts for non-technical stakeholders — from presenting AI best practices to entire companies, to running workshops on responsible AI and shadow AI risks. I bridge the gap between data science teams and business decision-makers.</p>
+        <p>Experienced in translating AI concepts for non-technical stakeholders &mdash; from presenting AI best practices to entire companies, to running workshops on responsible AI and shadow AI risks. I bridge the gap between data science teams and business decision-makers.</p>
       </div>
 
       <div class="card">
@@ -461,13 +461,13 @@
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-users-gear"></i></div>
         <h3>Team Leadership &amp; Mentorship</h3>
-        <p>Supervised interns and student projects (SkillMatch AI, HydroAs, ESILV). Founded KmerAI, co-organized IndabaX Cameroon, and chair the DLI 2026 selection committee — coordinating distributed teams, volunteers, and cross-continent logistics.</p>
+        <p>Supervised interns and student projects (SkillMatch AI, HydroAs, ESILV). Founded KmerAI, co-organized IndabaX Cameroon, and chair the DLI 2026 selection committee &mdash; coordinating distributed teams, volunteers, and cross-continent logistics.</p>
       </div>
     
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-arrows-spin"></i></div>
         <h3>Iterative &amp; Agile Mindset</h3>
-        <p>Thrive in environments where requirements evolve. Experienced working through ambiguity — aligning divergent expert opinions, converging on shared definitions, and delivering incrementally while maintaining quality.</p>
+        <p>Thrive in environments where requirements evolve. Experienced working through ambiguity &mdash; aligning divergent expert opinions, converging on shared definitions, and delivering incrementally while maintaining quality.</p>
       </div>
 
       <div class="card">
@@ -579,23 +579,23 @@
     <div class="timeline">
 
       <div class="timeline-item">
-        <div class="date">January 2025 – March 2026</div>
+        <div class="date">January 2025 &ndash; March 2026</div>
         <h3>Data Scientist</h3>
-        <div class="company">EGERIE · Toulon, France</div>
+        <div class="company">EGERIE &middot; Toulon, France</div>
         <ul>
           <li>Built automated GRC data extraction pipelines for French cybersecurity regulatory PDFs (3CF v3, IGI 901, ANSSI, DORA, NIS2, SecNumCloud) using pdfplumber and GPT APIs, transforming unstructured documents into structured JSON.</li>
           <li>Developed and deployed a collaborative GRC Navigator web platform (FastAPI + AWS App Runner via ECR/Docker) enabling multi-user review of controls and tasks across 7 regulatory frameworks.</li>
           <li>Conducted NIST 800-53 / SCF / European framework mapping analysis, identifying EU-relevant controls for our context.</li>
           <li>Implemented and validated a RAG prototype on SCF data, demonstrating feasibility of structured information access over compliance document corpora.</li>
           <li>Facilitated AI adoption across non-technical teams: delivered company-wide presentations on AI best practices, data confidentiality, prompt hygiene, and shadow AI risks.</li>
-          <li>Built document processing solutions for cross-departmental needs (PDF extraction, XLS → XML conversions) and led cross-functional AI services integration.</li>
+          <li>Built document processing solutions for cross-departmental needs (PDF extraction, XLS &rarr; XML conversions) and led cross-functional AI services integration.</li>
         </ul>
       </div>
 
       <div class="timeline-item">
-        <div class="date">March 2021 – September 2024</div>
+        <div class="date">March 2021 &ndash; September 2024</div>
         <h3>Research Scientist</h3>
-        <div class="company">COEXEL · Toulon, France</div>
+        <div class="company">COEXEL &middot; Toulon, France</div>
         <ul>
           <li>Developed automated news article and tag recommendation systems for newsletter creation, improving content curation efficiency.</li>
           <li>Created an information retrieval system using LLMs and vector databases (Faiss, Chroma) to enable seamless interaction with extensive document collections.</li>
@@ -604,18 +604,18 @@
       </div>
 
       <div class="timeline-item">
-        <div class="date">July 2020 – March 2021</div>
+        <div class="date">July 2020 &ndash; March 2021</div>
         <h3>Data Analyst</h3>
-        <div class="company">COEXEL · Toulon, France</div>
+        <div class="company">COEXEL &middot; Toulon, France</div>
         <ul>
           <li>Developed a document recommendation platform leveraging topic modeling to analyze and match documents to the top 10 themes for timely, relevant recommendations with source URL tracing.</li>
         </ul>
       </div>
 
       <div class="timeline-item">
-        <div class="date">September 2019 – April 2020</div>
+        <div class="date">September 2019 &ndash; April 2020</div>
         <h3>Data Scientist Intern</h3>
-        <div class="company">Group PSA (now Stellantis) · Vélizy, France</div>
+        <div class="company">Group PSA (now Stellantis) &middot; V&eacute;lizy, France</div>
         <ul>
           <li>Audio data analysis and signal processing using deep learning and ML models for classifying noise levels in FM audio signals (spectrogram, feature extraction, raw amplitude).</li>
           <li>Work resulted in a <strong>patent</strong> for an innovative audio signal processing technique.</li>
@@ -637,7 +637,7 @@
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
         <h3>FarmA</h3>
-        <p>USSD-based agricultural advisory platform for rural communities in Kenya — providing crop guidance, market prices, and weather alerts via basic mobile phones. Winning project at the <strong>Deep Learning Indaba 2024 Ideathon Challenge</strong>.</p>
+        <p>USSD-based agricultural advisory platform for rural communities in Kenya &mdash; providing crop guidance, market prices, and weather alerts via basic mobile phones. Winning project at the <strong>Deep Learning Indaba 2024 Ideathon Challenge</strong>.</p>
         <span class="card-tag">DLI 2024 Ideathon Winner</span>
       </div>
 
@@ -665,13 +665,13 @@
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-water"></i></div>
         <h3>HydroAs</h3>
-        <p>Flood prediction and modeling research project. Winner of WWF INNO Student Challenge 2023 (€10,000 funding) and finalist at TU Delft Impact Contest 2021.</p>
+        <p>Flood prediction and modeling research project. Winner of WWF INNO Student Challenge 2023 (&euro;10,000 funding) and finalist at TU Delft Impact Contest 2021.</p>
         <span class="card-tag">Award-winning</span>
       </div>
 
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <h3>PI²4 – ESILV Recommendation Systems</h3>
+        <h3>PI&sup2;4 &ndash; ESILV Recommendation Systems</h3>
         <p>Year 4 industrial innovation project supervision at ESILV engineering school, guiding students on building recommendation systems.</p>
         <span class="card-tag">Supervision</span>
       </div>
@@ -694,7 +694,7 @@
     <h2 class="section-title">Open Datasets</h2>
     <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 750px; margin-bottom: 2.5rem;">
       Building and contributing to high-quality, ML-ready datasets that address representation gaps in AI &mdash; from African legal systems 
-      to cultural food knowledge for bias detection.
+      to cultural food knowledge for bias detection. Developed under <strong style="color: var(--text);">Maathis</strong> and in collaboration with <strong style="color: var(--text);">OxAI</strong>.
     </p>
 
     <div class="dataset-grid">
@@ -714,22 +714,11 @@
             Covers business law jurisprudence across 17 African member states with rich annotation layers: 
             dispute summaries, judicial reasoning, rulings, legal domain labels, and cited articles.
           </p>
-          
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-bottom: 1.2rem;">
-            <div class="dataset-stat" style="background: var(--accent-bg);">
-              <div class="num" style="color: var(--accent);">4,059</div>
-              <div class="label">Cases</div>
-            </div>
-            <div class="dataset-stat" style="background: var(--accent-bg);">
-              <div class="num" style="color: var(--accent);">16</div>
-              <div class="label">Legal domains</div>
-            </div>
-            <div class="dataset-stat" style="background: var(--accent-bg);">
-              <div class="num" style="color: var(--accent);">17</div>
-              <div class="label">Countries</div>
-            </div>
+            <div class="dataset-stat" style="background: var(--accent-bg);"><div class="num" style="color: var(--accent);">4,059</div><div class="label">Cases</div></div>
+            <div class="dataset-stat" style="background: var(--accent-bg);"><div class="num" style="color: var(--accent);">16</div><div class="label">Legal domains</div></div>
+            <div class="dataset-stat" style="background: var(--accent-bg);"><div class="num" style="color: var(--accent);">17</div><div class="label">Countries</div></div>
           </div>
-
           <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Text Classification</span>
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Summarization</span>
@@ -737,7 +726,6 @@
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">French</span>
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">1997&ndash;2023</span>
           </div>
-
           <a href="https://huggingface.co/datasets/Maathis-com/ohada-ccja-corpus" target="_blank" class="dataset-btn">
             <span style="font-size: 1.1rem;">&#129303;</span> View on Hugging Face
           </a>
@@ -759,22 +747,11 @@
             inter-case citations, legal article references, party involvement, geographic origins, and 
             Acte Uniforme mappings. Ships with PyTorch Geometric loader and Neo4j import scripts.
           </p>
-          
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-bottom: 1.2rem;">
-            <div class="dataset-stat" style="background: rgba(14, 116, 144, 0.07);">
-              <div class="num" style="color: #0E7490;">11,131</div>
-              <div class="label">Nodes</div>
-            </div>
-            <div class="dataset-stat" style="background: rgba(14, 116, 144, 0.07);">
-              <div class="num" style="color: #0E7490;">33,408</div>
-              <div class="label">Edges</div>
-            </div>
-            <div class="dataset-stat" style="background: rgba(14, 116, 144, 0.07);">
-              <div class="num" style="color: #0E7490;">6</div>
-              <div class="label">Edge types</div>
-            </div>
+            <div class="dataset-stat" style="background: rgba(14, 116, 144, 0.07);"><div class="num" style="color: #0E7490;">11,131</div><div class="label">Nodes</div></div>
+            <div class="dataset-stat" style="background: rgba(14, 116, 144, 0.07);"><div class="num" style="color: #0E7490;">33,408</div><div class="label">Edges</div></div>
+            <div class="dataset-stat" style="background: rgba(14, 116, 144, 0.07);"><div class="num" style="color: #0E7490;">6</div><div class="label">Edge types</div></div>
           </div>
-
           <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Link Prediction</span>
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Node Classification</span>
@@ -782,8 +759,40 @@
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">PyG / Neo4j</span>
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Heterogeneous</span>
           </div>
-
           <a href="https://huggingface.co/datasets/Maathis-com/ohada-ccja-graph" target="_blank" class="dataset-btn">
+            <span style="font-size: 1.1rem;">&#129303;</span> View on Hugging Face
+          </a>
+        </div>
+      </div>
+
+      <!-- Legislative Corpus Dataset (NEW) -->
+      <div class="dataset-card" style="border-left: 3px solid #7C3AED;">
+        <div class="deco" style="background: rgba(124, 58, 237, 0.07);"></div>
+        <div style="position: relative;">
+          <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap: wrap;">
+            <span class="dataset-badge" style="background: #7C3AED; color: #fff;">GraphRAG</span>
+            <span class="dataset-badge" style="background: var(--text); color: var(--bg);">Maathis</span>
+            <span class="dataset-badge" style="background: rgba(124, 58, 237, 0.07); color: #7C3AED;">CC-BY-4.0</span>
+          </div>
+          <h3 style="font-family: var(--serif); font-size: 1.2rem; margin-bottom: 0.3rem;">OHADA Actes Uniformes</h3>
+          <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.2rem; line-height: 1.7;">
+            The first article-level structured corpus of all 9 OHADA Uniform Acts &mdash; the harmonized business laws 
+            governing 17 African nations. Includes a legislative knowledge graph with internal cross-references, 
+            cross-Acte citations, and 15,380 bridge edges linking statutory articles to CCJA court decisions.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-bottom: 1.2rem;">
+            <div class="dataset-stat" style="background: rgba(124, 58, 237, 0.07);"><div class="num" style="color: #7C3AED;">3,126</div><div class="label">Articles</div></div>
+            <div class="dataset-stat" style="background: rgba(124, 58, 237, 0.07);"><div class="num" style="color: #7C3AED;">19,800</div><div class="label">Edges</div></div>
+            <div class="dataset-stat" style="background: rgba(124, 58, 237, 0.07);"><div class="num" style="color: #7C3AED;">9</div><div class="label">Uniform Acts</div></div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Legal QA</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">GraphRAG</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Article Retrieval</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Neo4j / PyG</span>
+            <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">French</span>
+          </div>
+          <a href="https://huggingface.co/datasets/Maathis-com/ohada-actes-uniformes" target="_blank" class="dataset-btn">
             <span style="font-size: 1.1rem;">&#129303;</span> View on Hugging Face
           </a>
         </div>
@@ -805,22 +814,11 @@
             VQA experiments, and community reviews of AI-generated dish imagery. 
             <strong style="color: var(--accent);">FAccT 2025 Honorable Mention Best Paper.</strong>
           </p>
-          
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-bottom: 1.2rem;">
-            <div class="dataset-stat" style="background: rgba(157, 23, 77, 0.07);">
-              <div class="num" style="color: #9D174D;">Global</div>
-              <div class="label">Contributors</div>
-            </div>
-            <div class="dataset-stat" style="background: rgba(157, 23, 77, 0.07);">
-              <div class="num" style="color: #9D174D;">5+</div>
-              <div class="label">African countries</div>
-            </div>
-            <div class="dataset-stat" style="background: rgba(157, 23, 77, 0.07);">
-              <div class="num" style="color: #9D174D;">4</div>
-              <div class="label">Experiment types</div>
-            </div>
+            <div class="dataset-stat" style="background: rgba(157, 23, 77, 0.07);"><div class="num" style="color: #9D174D;">Global</div><div class="label">Contributors</div></div>
+            <div class="dataset-stat" style="background: rgba(157, 23, 77, 0.07);"><div class="num" style="color: #9D174D;">5+</div><div class="label">African countries</div></div>
+            <div class="dataset-stat" style="background: rgba(157, 23, 77, 0.07);"><div class="num" style="color: #9D174D;">4</div><div class="label">Experiment types</div></div>
           </div>
-
           <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Bias Detection</span>
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Text-to-Image</span>
@@ -828,7 +826,6 @@
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Community-centered</span>
             <span class="skill-tag" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Multilingual</span>
           </div>
-
           <a href="https://github.com/oxai/world-wide-dishes/" target="_blank" class="dataset-btn">
             <i class="fa-brands fa-github" style="font-size: 1rem;"></i> View on GitHub
           </a>
@@ -846,19 +843,19 @@
     <h2 class="section-title">Publications</h2>
 
     <div class="pub-item">
-      <div class="pub-year">2025 <span class="pub-type" style="background: #d4af37; color: #fff;">ACL — Best Social Impact Paper Award</span></div>
+      <div class="pub-year">2025 <span class="pub-type" style="background: #d4af37; color: #fff;">ACL &mdash; Best Social Impact Paper Award</span></div>
       <h4>AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset.</h4>
-      <div class="pub-venue">Tobi Olatunji, Charles Nimo, ..., <strong>Foutse Yuehgoh</strong>, et al. — ACL 2025 Main Conference. <a href="https://arxiv.org/abs/2411.15640">arXiv</a></div>
+      <div class="pub-venue">Tobi Olatunji, Charles Nimo, ..., <strong>Foutse Yuehgoh</strong>, et al. &mdash; ACL 2025 Main Conference. <a href="https://arxiv.org/abs/2411.15640">arXiv</a></div>
     </div>
 
     <div class="pub-item">
-      <div class="pub-year">2025 <span class="pub-type" style="background: #d4af37; color: #fff;">NAACL — Outstanding Paper Award</span></div>
+      <div class="pub-year">2025 <span class="pub-type" style="background: #d4af37; color: #fff;">NAACL &mdash; Outstanding Paper Award</span></div>
       <h4>IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models.</h4>
-      <div class="pub-venue">David I. Adelani, Jessica Ojo, ..., <strong>Foutse Yuehgoh</strong>, et al. — NAACL 2025. <a href="https://aclanthology.org/2025.naacl-long.139/">ACL Anthology</a></div>
+      <div class="pub-venue">David I. Adelani, Jessica Ojo, ..., <strong>Foutse Yuehgoh</strong>, et al. &mdash; NAACL 2025. <a href="https://aclanthology.org/2025.naacl-long.139/">ACL Anthology</a></div>
     </div>
 
     <div class="pub-item">
-      <div class="pub-year">2025 <span class="pub-type" style="background: #d4af37; color: #fff;">FAccT — Honorable Mention Best Paper</span></div>
+      <div class="pub-year">2025 <span class="pub-type" style="background: #d4af37; color: #fff;">FAccT &mdash; Honorable Mention Best Paper</span></div>
       <h4>The World Wide Recipe: A community-centred framework for fine-grained data collection and regional bias operationalisation.</h4>
       <div class="pub-venue">FAccT 2025. <a href="https://dl.acm.org/doi/full/10.1145/3715275.3732019">ACM DL</a></div>
     </div>
@@ -878,25 +875,25 @@
     <div class="pub-item">
       <div class="pub-year">2024 <span class="pub-type">Conference</span></div>
       <h4>How to Recommend Multidimensional Data with a Multiplex Graph?</h4>
-      <div class="pub-venue">Foutse Yuehgoh, et al. — 16th Asian Conference on Intelligent Information and Database Systems (ACIIDS 2024). <a href="https://link.springer.com/chapter/10.1007/978-981-97-4985-0_26">Link</a></div>
+      <div class="pub-venue">Foutse Yuehgoh, et al. &mdash; 16th Asian Conference on Intelligent Information and Database Systems (ACIIDS 2024). <a href="https://link.springer.com/chapter/10.1007/978-981-97-4985-0_26">Link</a></div>
     </div>
 
     <div class="pub-item">
       <div class="pub-year">2022 <span class="pub-type">Conference</span></div>
       <h4>A Multiplex Network Framework Based Recommendation Systems for Technology Intelligence.</h4>
-      <div class="pub-venue">Foutse Yuehgoh, et al. — New Trends in Database and Information Systems (ADBIS 2022). <a href="https://link.springer.com/chapter/10.1007/978-3-031-15743-1_32">Link</a></div>
+      <div class="pub-venue">Foutse Yuehgoh, et al. &mdash; New Trends in Database and Information Systems (ADBIS 2022). <a href="https://link.springer.com/chapter/10.1007/978-3-031-15743-1_32">Link</a></div>
     </div>
 
     <div class="pub-item">
       <div class="pub-year">2017 <span class="pub-type">Conference</span></div>
       <h4>Return of experience on the mean-shift clustering for heterogeneous architecture use case.</h4>
-      <div class="pub-venue">Christophe Cérin, Jean-Luc Gaudiot, Mustapha Lebbah, Foutse Yuehgoh — 2017 IEEE International Conference on Big Data. <a href="https://ieeexplore.ieee.org/abstract/document/8258339">Link</a></div>
+      <div class="pub-venue">Christophe C&eacute;rin, Jean-Luc Gaudiot, Mustapha Lebbah, Foutse Yuehgoh &mdash; 2017 IEEE International Conference on Big Data. <a href="https://ieeexplore.ieee.org/abstract/document/8258339">Link</a></div>
     </div>
 
     <div class="pub-item">
       <div class="pub-year">2022 <span class="pub-type">Workshop</span></div>
       <h4>A Technology Intelligence Recommendation System based on Multiplex Networks.</h4>
-      <div class="pub-venue">17th Women in Machine Learning Workshop (WiML), co-located with NeurIPS 2022, New Orleans, USA. <a href="https://hal.science/hal-04091140">Link</a> · Also presented at MADICS Symposium (Lyon) and Deep Learning Indaba 2022 (Tunis).</div>
+      <div class="pub-venue">17th Women in Machine Learning Workshop (WiML), co-located with NeurIPS 2022, New Orleans, USA. <a href="https://hal.science/hal-04091140">Link</a> &middot; Also presented at MADICS Symposium (Lyon) and Deep Learning Indaba 2022 (Tunis).</div>
     </div>
 
     <div class="pub-item">
@@ -918,12 +915,12 @@
 
       <div class="community-card">
         <h3><i class="fa-solid fa-star" style="color: var(--accent);"></i> Deep Learning Indaba 2026 <span class="badge">Chair</span></h3>
-        <p>Chair of the Application &amp; Selection Committee for Deep Learning Indaba 2026 in Nigeria — Africa's premier machine learning conference. Responsible for designing application forms, coordinating tester feedback, and leading the selection process.</p>
+        <p>Chair of the Application &amp; Selection Committee for Deep Learning Indaba 2026 in Nigeria &mdash; Africa's premier machine learning conference. Responsible for designing application forms, coordinating tester feedback, and leading the selection process.</p>
       </div>
 
       <div class="community-card">
         <h3><i class="fa-solid fa-users" style="color: var(--accent);"></i> IndabaX Cameroon <span class="badge">Co-organizer</span></h3>
-        <p>Co-organizer since 2020. Led the IndabaX Cameroon 2026 conference (May 12–14, Université de Ngaoundéré): committee updates, program schedule design, and speaker coordination.</p>
+        <p>Co-organizer since 2020. Led the IndabaX Cameroon 2026 conference (May 12&ndash;14, Universit&eacute; de Ngaound&eacute;r&eacute;): committee updates, program schedule design, and speaker coordination.</p>
       </div>
 
       <div class="community-card">
@@ -932,8 +929,8 @@
       </div>
 
       <div class="community-card">
-        <h3><i class="fa-solid fa-venus" style="color: var(--accent);"></i> WiMLDS Yaoundé</h3>
-        <p>Co-organizer of the <a href="http://wimlds.org/about-the-yaounde-team-2/" target="_blank" style="color: var(--accent);">Women in Machine Learning &amp; Data Science</a> Yaoundé chapter. Organizing workshops, talks, and mentoring events.</p>
+        <h3><i class="fa-solid fa-venus" style="color: var(--accent);"></i> WiMLDS Yaound&eacute;</h3>
+        <p>Co-organizer of the <a href="http://wimlds.org/about-the-yaounde-team-2/" target="_blank" style="color: var(--accent);">Women in Machine Learning &amp; Data Science</a> Yaound&eacute; chapter. Organizing workshops, talks, and mentoring events.</p>
       </div>
 
       <div class="community-card">
@@ -943,7 +940,7 @@
 
       <div class="community-card">
         <h3><i class="fa-solid fa-hand-holding-heart" style="color: var(--accent);"></i> Mentorship</h3>
-        <p>Remote mentorship for <a href="https://afev.org/" target="_blank" style="color: var(--accent);">Afev</a>, <a href="https://www.aighana.org/" target="_blank" style="color: var(--accent);">AI Ghana</a>, and <a href="https://aisaturdayslagos.github.io/" target="_blank" style="color: var(--accent);">AI Saturday Lagos</a> (2021–2023). Co-founded WPSYG (Women Promoting Sciences to the Younger Generation) to encourage girls in STEM.</p>
+        <p>Remote mentorship for <a href="https://afev.org/" target="_blank" style="color: var(--accent);">Afev</a>, <a href="https://www.aighana.org/" target="_blank" style="color: var(--accent);">AI Ghana</a>, and <a href="https://aisaturdayslagos.github.io/" target="_blank" style="color: var(--accent);">AI Saturday Lagos</a> (2021&ndash;2023). Co-founded WPSYG (Women Promoting Sciences to the Younger Generation) to encourage girls in STEM.</p>
       </div>
 
       <div class="community-card">
@@ -964,108 +961,72 @@
     <div class="awards-list">
       <div class="award-item">
         <div class="award-year">2025</div>
-        <div>
-          <h4>Best Social Impact Paper Award — ACL 2025</h4>
-          <p>AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset.</p>
-        </div>
+        <div><h4>Best Social Impact Paper Award &mdash; ACL 2025</h4><p>AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset.</p></div>
       </div>
       <div class="award-item">
         <div class="award-year">2025</div>
-        <div>
-          <h4>Outstanding Paper Award — NAACL 2025</h4>
-          <p>IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models.</p>
-        </div>
+        <div><h4>Outstanding Paper Award &mdash; NAACL 2025</h4><p>IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models.</p></div>
       </div>
       <div class="award-item">
         <div class="award-year">2025</div>
-        <div>
-          <h4>Honorable Mention Best Paper — FAccT 2025</h4>
-          <p>The World Wide Recipe: A community-centred framework for fine-grained data collection and regional bias operationalisation.</p>
-        </div>
+        <div><h4>Honorable Mention Best Paper &mdash; FAccT 2025</h4><p>The World Wide Recipe: A community-centred framework for fine-grained data collection and regional bias operationalisation.</p></div>
       </div>
       <div class="award-item">
         <div class="award-year">2024</div>
-        <div>
-          <h4>Deep Learning Indaba 2024 Ideathon — Winner</h4>
-          <p>FarmA: USSD-based agricultural advisory platform for rural communities in Kenya.</p>
-        </div>
+        <div><h4>Deep Learning Indaba 2024 Ideathon &mdash; Winner</h4><p>FarmA: USSD-based agricultural advisory platform for rural communities in Kenya.</p></div>
       </div>
       <div class="award-item">
         <div class="award-year">2023</div>
-        <div>
-          <h4>WWF INNO Student Challenge — Winner</h4>
-          <p>€10,000 funding and professional coaching for the HydroAs flood prediction project.</p>
-        </div>
+        <div><h4>WWF INNO Student Challenge &mdash; Winner</h4><p>&euro;10,000 funding and professional coaching for the HydroAs flood prediction project.</p></div>
       </div>
       <div class="award-item">
         <div class="award-year">2021</div>
-        <div>
-          <h4>TU Delft Impact Contest — Finalist</h4>
-          <p>HydroAs flood prediction and modeling project.</p>
-        </div>
+        <div><h4>TU Delft Impact Contest &mdash; Finalist</h4><p>HydroAs flood prediction and modeling project.</p></div>
       </div>
       <div class="award-item">
-        <div class="award-year">2018–24</div>
-        <div>
-          <h4>Travel Grants</h4>
-          <p>WiML grant to NeurIPS 2022, Black in AI grants to NeurIPS 2018, 2019, 2022, and CVPR 2024.</p>
-        </div>
+        <div class="award-year">2018&ndash;24</div>
+        <div><h4>Travel Grants</h4><p>WiML grant to NeurIPS 2022, Black in AI grants to NeurIPS 2018, 2019, 2022, and CVPR 2024.</p></div>
       </div>
       <div class="award-item">
         <div class="award-year">2018</div>
-        <div>
-          <h4>Excellence Scholarship — University of Paris Saclay</h4>
-          <p>Masters admission scholarship for Information Processing &amp; Data Exploitation.</p>
-        </div>
+        <div><h4>Excellence Scholarship &mdash; University of Paris Saclay</h4><p>Masters admission scholarship for Information Processing &amp; Data Exploitation.</p></div>
       </div>
       <div class="award-item">
         <div class="award-year">2016</div>
-        <div>
-          <h4>MasterCard Foundation Scholarship — AIMS</h4>
-          <p>Masters admission at the African Institute for Mathematical Sciences, Senegal.</p>
-        </div>
+        <div><h4>MasterCard Foundation Scholarship &mdash; AIMS</h4><p>Masters admission at the African Institute for Mathematical Sciences, Senegal.</p></div>
       </div>
       <div class="award-item">
         <div class="award-year">2009</div>
-        <div>
-          <h4>GCE Ordinary Levels Award</h4>
-          <p>Best student in the Adamawa region, Cameroon. Awarded by Les Brasseries du Cameroun.</p>
-        </div>
+        <div><h4>GCE Ordinary Levels Award</h4><p>Best student in the Adamawa region, Cameroon. Awarded by Les Brasseries du Cameroun.</p></div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- EDUCATION (brief) -->
+<!-- EDUCATION -->
 <section class="section-alt">
   <div class="section-inner fade-in">
     <p class="section-label">Background</p>
     <h2 class="section-title">Education</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="date">2021 – 2024</div>
+        <div class="date">2021 &ndash; 2024</div>
         <h3>Ph.D in Computer Science</h3>
-        <div class="company">CNAM Paris · Doctoral School SMI – Engineering Science</div>
-        <ul>
-          <li><em>A Multiplex Graph-based Recommendation System for Multi-Criteria Profiles Enhancement.</em> In partnership with De Vinci Research Center and Coexel.</li>
-        </ul>
+        <div class="company">CNAM Paris &middot; Doctoral School SMI &ndash; Engineering Science</div>
+        <ul><li><em>A Multiplex Graph-based Recommendation System for Multi-Criteria Profiles Enhancement.</em> In partnership with De Vinci Research Center and Coexel.</li></ul>
       </div>
       <div class="timeline-item">
-        <div class="date">2018 – 2019</div>
+        <div class="date">2018 &ndash; 2019</div>
         <h3>MSc in Information Processing &amp; Data Exploitation</h3>
-        <div class="company">University of Paris Saclay (UVSQ) · Faculty of Engineering</div>
-        <ul>
-          <li>Thesis: <em>Subjective Radio Quality Rating Through AI.</em></li>
-        </ul>
+        <div class="company">University of Paris Saclay (UVSQ) &middot; Faculty of Engineering</div>
+        <ul><li>Thesis: <em>Subjective Radio Quality Rating Through AI.</em></li></ul>
       </div>
       <div class="timeline-item">
-        <div class="date">2016 – 2018</div>
+        <div class="date">2016 &ndash; 2018</div>
         <h3>MSc in Mathematical Science</h3>
-        <div class="company">African Institute for Mathematical Sciences (AIMS) · Mbour, Senegal</div>
-        <ul>
-          <li>Thesis: <em>Mean-shift Clustering for Heterogeneous Architecture.</em> Grade: Distinction.</li>
-        </ul>
+        <div class="company">African Institute for Mathematical Sciences (AIMS) &middot; Mbour, Senegal</div>
+        <ul><li>Thesis: <em>Mean-shift Clustering for Heterogeneous Architecture.</em> Grade: Distinction.</li></ul>
       </div>
     </div>
   </div>
@@ -1080,10 +1041,10 @@
       I'm looking for roles where I can combine my deep AI expertise with product strategy and team leadership. I'm particularly drawn to positions such as:
     </p>
     <div class="skills-wrap" style="justify-content: center; margin-bottom: 2rem;">
-      <span class="skill-tag highlight">Product Owner IA / Data & GenAI</span>
+      <span class="skill-tag highlight">Product Owner IA / Data &amp; GenAI</span>
       <span class="skill-tag highlight">AI/ML Team Lead</span>
       <span class="skill-tag highlight">Chef de Projet IA</span>
-      <span class="skill-tag highlight">AI Strategy & Governance Lead</span>
+      <span class="skill-tag highlight">AI Strategy &amp; Governance Lead</span>
       <span class="skill-tag highlight">Senior Data Scientist</span>
       <span class="skill-tag highlight">AI Research Lead</span>
       <span class="skill-tag highlight">Unstructured Data Engineer</span>
@@ -1092,15 +1053,15 @@
       I bring a rare blend: Ph.D-level technical depth in AI/ML/NLP, hands-on product delivery experience, the ability to translate complex AI into business value for non-technical teams, and a track record of leading initiatives across organizations and continents. Based in Toulon, open to remote and hybrid roles across France.
     </p>
     <div style="margin-top: 1.5rem;">
-      <a href="mailto:foutse.yuehgoh@gmail.com" style="display: inline-block; padding: 0.8rem 2rem; background: var(--accent); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.95rem; transition: background 0.2s;">Get in touch →</a>
+      <a href="mailto:foutse.yuehgoh@gmail.com" style="display: inline-block; padding: 0.8rem 2rem; background: var(--accent); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.95rem; transition: background 0.2s;">Get in touch &rarr;</a>
     </div>
   </div>
 </section>
 
 <!-- ENCOURAGEMENT -->
 <div class="quote-section" style="background: var(--accent);">
-  <blockquote style="font-size: 1.3rem; max-width: 750px;">"To every young girl stepping into the world of STEM: You belong here. Don't be afraid to take up space. Ask questions, even the ones you think might sound too simple. That's how discovery begins. You don't have to be perfect — you just have to keep going. And as you rise, don't forget to look back and lift others with you."</blockquote>
-  <cite style="opacity: 0.8;">— Foutse Yuehgoh</cite>
+  <blockquote style="font-size: 1.3rem; max-width: 750px;">"To every young girl stepping into the world of STEM: You belong here. Don't be afraid to take up space. Ask questions, even the ones you think might sound too simple. That's how discovery begins. You don't have to be perfect &mdash; you just have to keep going. And as you rise, don't forget to look back and lift others with you."</blockquote>
+  <cite style="opacity: 0.8;">&mdash; Foutse Yuehgoh</cite>
 </div>
 
 <!-- HOBBIES -->
@@ -1109,14 +1070,14 @@
     <p class="section-label">Beyond Work</p>
     <h2 class="section-title">When I'm Not Doing AI</h2>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem; font-size: 1rem; color: var(--text-secondary);">
-      <span>🎵 Singing &amp; <a href="https://www.youtube.com/@GivenTGive" target="_blank" style="color: var(--accent);">AI Music</a></span>
-      <span>💃 Dancing</span>
-      <span>🏃‍♀️ Running</span>
-      <span>🎾 Tennis</span>
-      <span>🏓 Ping Pong</span>
-      <span>📚 Reading</span>
-      <span>🎬 Movies</span>
-      <span>✈️ Traveling</span>
+      <span>&#127925; Singing &amp; <a href="https://www.youtube.com/@GivenTGive" target="_blank" style="color: var(--accent);">AI Music</a></span>
+      <span>&#128131; Dancing</span>
+      <span>&#127939;&#8205;&#9792;&#65039; Running</span>
+      <span>&#127934; Tennis</span>
+      <span>&#127955; Ping Pong</span>
+      <span>&#128218; Reading</span>
+      <span>&#127916; Movies</span>
+      <span>&#9992;&#65039; Traveling</span>
     </div>
   </div>
 </section>
@@ -1132,24 +1093,24 @@
     <a href="https://twitter.com/yuehgoh" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
     <a href="mailto:foutse.yuehgoh@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
   </div>
-  <p>&copy; 2026 Foutse Yuehgoh · Let love lead. &#10084;</p>
+  <p>&copy; 2026 Foutse Yuehgoh &middot; Let love lead. &#10084;</p>
 </footer>
 
 <script>
 // Navbar scroll effect
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', function() {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
 });
 
 // Fade-in on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
 
 // Close mobile nav on link click
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => document.getElementById('navbar').classList.remove('open'));
+document.querySelectorAll('.nav-links a').forEach(function(a) {
+  a.addEventListener('click', function() { document.getElementById('navbar').classList.remove('open'); });
 });
 </script>
 
